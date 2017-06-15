@@ -23,7 +23,7 @@ if __name__ == '__main__':
                     '--cached':data[7],
                     '--shared':data[8]
             }.get(arguments[2])
-            
+
         if memory_type == '--swap':
             data = psutil.swap_memory()
             result = {
@@ -36,8 +36,3 @@ if __name__ == '__main__':
             }.get(arguments[2])
 
         print result
-        
-
-    
-
-
