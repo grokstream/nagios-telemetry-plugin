@@ -14,14 +14,9 @@ if __name__ == '__main__':
             data = psutil.disk_usage('/')
             result = {
                 '--total':data[0],
-                '--write_count':data[1],
-                '--read_bytes':data[2],
-                '--write_bytes':data[3],
-                '--read_time':data[4],
-                '--write_time':data[5],
-                '--read_merged_count':data[6],
-                '--write_merged_count':data[7],
-                '--busy_time':data[8]
+                '--used':data[1],
+                '--free':data[2],
+                '--percent':data[3],
             }.get(arguments[2])
 
         if disk_type == '--disk_io_counters':
