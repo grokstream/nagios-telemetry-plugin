@@ -10,129 +10,103 @@ import sys
 
 def cpu_time_user():
     data = psutil.cpu_times()
-    if 'user' not in vars(data).keys():
-        return "You do not have access to 'user' CPU data."
-        sys.exit()
+    if not data.user:
+        sys.exit(3)
     return data[0]
 
 def cpu_time_nice():
     data = psutil.cpu_times()
-    if 'nice' not in vars(data).keys():
-        return "You do not have access to 'nice' CPU data."
+    if not data.nice:
         sys.exit()
     return data[1]
 
 def cpu_time_system():
     data = psutil.cpu_times()
-    if 'system' not in vars(data).keys():
-        return "You do not have access to 'system' CPU data."
+    if not data.system:
         sys.exit()
     return data[2]
 
 def cpu_time_idle():
     data = psutil.cpu_times()
-    if 'idle' not in vars(data).keys():
-        return "You do not have access to 'idle' CPU data."
+    if not data.idle:
         sys.exit()
     return data[3]
 
 def cpu_time_iowait():
     data = psutil.cpu_times()
-    if 'iowait' not in vars(data).keys():
-        return "You do not have access to 'iowait' CPU data."
+    if not data.iowait:
         sys.exit()
     return data[4]
 
 def cpu_time_irq():
     data = psutil.cpu_times()
-    if 'irq' not in vars(data).keys():
-        return "You do not have access to 'irq' CPU data."
+    if not data.irq:
         sys.exit()
     return data[5]
 
 def cpu_time_softirq():
     data = psutil.cpu_times()
-    if 'softirq' not in vars(data).keys():
-        return "You do not have access to 'softirq' CPU data."
+    if not data.softirq:
         sys.exit()
     return data[6]
 
 def cpu_time_steal():
     data = psutil.cpu_times()
-    if 'steal' not in vars(data).keys():
-        return "You do not have access to 'steal' CPU data."
+    if not data.steal:
         sys.exit()
     return data[7]
 
 def cpu_time_guest():
     data = psutil.cpu_times()
-    if 'guest' not in vars(data).keys():
-        return "You do not have access to 'guest' CPU data."
+    if not data.guest:
         sys.exit()
     return data[8]
 
-
-
-
 def cpu_percent():
     data = psutil.cpu_timees_percent()
-    if 'percent' not in vars(data).keys():
-        return "You do not have access to 'percent' CPU data."
+    if not data.percent:
         sys.exit()
     return data[0]
 
-
 def cpu_freq_current():
     data = psutil.cpu_freq()
-    if 'current' not in vars(data).keys():
-        return "You do not have access to 'current' CPU freq data."
+    if not data.current:
         sys.exit()
     return data[0]
 
 def cpu_freq_min():
     data = psutil.cpu_freq()
-    if 'min' not in vars(data).keys():
-        return "You do not have access to 'min' CPU freq data."
+    if not data.min:
         sys.exit()
     return data[1]
 
 def cpu_freq_max():
     data = psutil.cpu_freq()
-    if 'max' not in vars(data).keys():
-        return "You do not have access to 'max' CPU freq data."
+    if not data.max:
         sys.exit()
     return data[2]
 
-
-
-
-#CPU stats
-
 def cpu_stats_ctx_switches():
     data = psutil.cpu_stats()
-    if 'ctx_switches' not in vars(data).keys():
-        return "You do not have access to 'ctx_switches' CPU stats data."
+    if not data.ctx_switches:
         sys.exit()
     return data[0]
 
 def cpu_stats_interrupts():
     data = psutil.cpu_stats()
-    if 'ctx_switches' not in vars(data).keys():
-        return "You do not have access to 'interrupts' CPU stats data."
+    if not data.interrupts:
         sys.exit()
     return data[1]
 
 def cpu_stats_soft_interrupts():
     data = psutil.cpu_stats()
-    if 'ctx_switches' not in vars(data).keys():
-        return "You do not have access to 'soft_interrupts' CPU stats data."
+    if not data.soft_interrupts:
         sys.exit()
     return data[2]
 
 def cpu_stats_syscalls():
     data = psutil.cpu_stats()
-    if 'ctx_switches' not in vars(data).keys():
-        return "You do not have access to 'syscalls' CPU stats data."
+    if not data.syscalls:
         sys.exit()
     return data[3]
 
@@ -141,29 +115,25 @@ def cpu_stats_syscalls():
 
 def disk_usage_total():
     data = psutil.disk_usage('/')
-    if 'total' not in vars(data).keys():
-        return "You do not have access to 'total' disk data."
+    if not data.total:
         sys.exit()
     return data[0]
 
 def disk_usage_used():
     data = psutil.disk_usage('/')
-    if 'used' not in vars(data).keys():
-        return "You do not have access to 'used' disk data."
+    if not data.used:
         sys.exit()
     return data[1]
 
 def disk_usage_free():
     data = psutil.disk_usage('/')
-    if 'free' not in vars(data).keys():
-        return "You do not have access to 'free' disk data."
+    if not data.free:
         sys.exit()
     return data[2]
 
 def disk_usage_percent():
     data = psutil.disk_usage('/')
-    if 'percent' not in vars(data).keys():
-        return "You do not have access to 'percent' disk data."
+    if not data.percent:
         sys.exit()
     return data[3]
 
@@ -173,50 +143,43 @@ def disk_usage_percent():
 #disk I/O
 def disk_io_read_count():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'read_count' not in vars(data).keys():
-        return "You do not have access to 'read_count' disk data."
+    if not data.read_count:
         sys.exit()
     return data[0]
 
 def disk_io_write_count():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'write_count' not in vars(data).keys():
-        return "You do not have access to 'write_count' disk data."
+    if not data.write_count:
         sys.exit()
     return data[1]
 
 def disk_io_read_bytes():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'read_bytes' not in vars(data).keys():
-        return "You do not have access to 'read_bytes' disk data."
+    if not data.read_bytes:
         sys.exit()
     return data[2]
 
 def disk_io_write_time():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'write_time' not in vars(data).keys():
-        return "You do not have access to 'write_time' disk data."
+    if not data.write_time:
         sys.exit()
     return data[3]
 
 def disk_io_read_merged_count():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'read_merged_count' not in vars(data).keys():
-        return "You do not have access to 'read_merged_count' disk data."
+    if not data.read_merged_count:
         sys.exit()
     return data[4]
 
 def disk_io_write_merged_count():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'write_merged_count' not in vars(data).keys():
-        return "You do not have access to 'write_merged_count' disk data."
+    if not data.write_merged_count:
         sys.exit()
     return data[5]
 
 def disk_io_busy_time():
     data = psutil.disk_io_counters(perdisk=False)
-    if 'busy_time' not in vars(data).keys():
-        return "You do not have access to 'busy_time' disk data."
+    if not data.busy_time:
         sys.exit()
     return data[6]
 
@@ -226,64 +189,55 @@ def disk_io_busy_time():
 
 def virtual_memory_total():
     data = psutil.virtual_memory()
-    if 'total' not in vars(data).keys():
-        return "You do not have access to 'total' virtual memory data."
+    if not data.total:
         sys.exit()
     return data[0]
 
 def virtual_memory_available():
     data = psutil.virtual_memory()
-    if 'available' not in vars(data).keys():
-        return "You do not have access to 'available' virtual memory data."
+    if not data.available:
         sys.exit()
     return data[1]
 
 def virtual_memory_percent():
     data = psutil.virtual_memory()
-    if 'percent' not in vars(data).keys():
-        return "You do not have access to 'percent' virtual memory data."
+    if not data.percent:
         sys.exit()
     return data[2]
 
 def virtual_memory_free():
     data = psutil.virtual_memory()
-    if 'free' not in vars(data).keys():
-        return "You do not have access to 'free' virtual memory data."
+    if not data.free:
         sys.exit()
     return data[3]
 
 def virtual_memory_active():
     data = psutil.virtual_memory()
-    if 'active' not in vars(data).keys():
-        return "You do not have access to 'active' virtual memory data."
+    if not data.active:
         sys.exit()
     return data[4]
 
 def virtual_memory_inactive():
     data = psutil.virtual_memory()
-    if 'inactive' not in vars(data).keys():
-        return "You do not have access to 'inactive' virtual memory data."
+    if not data.inactive:
         sys.exit()
     return data[5]
 
 def virtual_memory_buffers():
     data = psutil.virtual_memory()
-    if 'buffers' not in vars(data).keys():
-        return "You do not have access to 'buffers' virtual memory data."
+    if not data.buffers:
         sys.exit()
     return data[6]
 
 def virtual_memory_cached():
     data = psutil.virtual_memory()
-    if 'cached' not in vars(data).keys():
-        return "You do not have access to 'cached' virtual memory data."
+    if not data.cached:
         sys.exit()
     return data[7]
 
 def virtual_memory_shared():
     data = psutil.virtual_memory()
-    if 'shared' not in vars(data).keys():
-        return "You do not have access to 'shared' virtual memory data."
+    if not data.shared:
         sys.exit()
     return data[8]
 
@@ -293,43 +247,37 @@ def virtual_memory_shared():
 
 def swap_memory_total():
     data = psutil.swap_memory()
-    if 'total' not in vars(data).keys():
-        return "You do not have access to 'shared' swap memory data."
+    if not data.total:
         sys.exit()
     return data[0]
 
 def swap_memory_used():
     data = psutil.swap_memory()
-    if 'used' not in vars(data).keys():
-        return "You do not have access to 'used' swap memory data."
+    if not data.used:
         sys.exit()
     return data[1]
 
 def swap_memory_free():
     data = psutil.swap_memory()
-    if 'free' not in vars(data).keys():
-        return "You do not have access to 'free' swap memory data."
+    if not data.free:
         sys.exit()
     return data[2]
 
 def swap_memory_percent():
     data = psutil.swap_memory()
-    if 'percent' not in vars(data).keys():
-        return "You do not have access to 'percent' swap memory data."
+    if not data.percent:
         sys.exit()
     return data[3]
 
 def swap_memory_sin():
     data = psutil.swap_memory()
-    if 'sin' not in vars(data).keys():
-        return "You do not have access to 'sin' swap memory data."
+    if not data.sin:
         sys.exit()
     return data[4]
 
 def swap_memory_sout():
     data = psutil.swap_memory()
-    if 'sout' not in vars(data).keys():
-        return "You do not have access to 'sout' swap memory data."
+    if not data.sout:
         sys.exit()
     return data[5]
 
@@ -337,57 +285,49 @@ interface = ''
 
 def network_bytes_sent():
     data = psutil.net_io_counters()
-    if 'bytes_sent' not in vars(data).keys():
-        return "You do not have access to 'bytes_sent' network data."
+    if not data.bytes_sent:
         sys.exit()
     return data[0]
 
 def network_bytes_recv():
     data = psutil.net_io_counters()
-    if 'bytes_recv' not in vars(data).keys():
-        return "You do not have access to 'bytes_recv' network data."
+    if not data.bytes_recv:
         sys.exit()
     return data[1]
 
 def network_packets_sent():
     data = psutil.net_io_counters()
-    if 'packets_sent' not in vars(data).keys():
-        return "You do not have access to 'packets_sent' network data."
+    if not data.packets_sent:
         sys.exit()
     return data[2]
 
 def network_packets_recv():
     data = psutil.net_io_counters()
-    if 'packets_recv' not in vars(data).keys():
-        return "You do not have access to 'packets_recv' network data."
+    if not data.packets_recv:
         sys.exit()
     return data[3]
 
 def network_errin():
     data = psutil.net_io_counters()
-    if 'errin' not in vars(data).keys():
-        return "You do not have access to 'errin' network data."
+    if not data.errin:
         sys.exit()
     return data[4]
 
 def network_errout():
     data = psutil.net_io_counters()
-    if 'errout' not in vars(data).keys():
-        return "You do not have access to 'errout' network data."
+    if not data.errout:
         sys.exit()
     return data[5]
 
 def network_dropin():
     data = psutil.net_io_counters()
-    if 'dropin' not in vars(data).keys():
-        return "You do not have access to 'dropin' network data."
+    if not data.dropin:
         sys.exit()
     return data[6]
 
 def network_dropout():
     data = psutil.net_io_counters()
-    if 'dropout' not in vars(data).keys():
-        return "You do not have access to 'dropout' network data."
+    if not data.dropout:
         sys.exit()
     return data[7]
 
