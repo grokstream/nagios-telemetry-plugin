@@ -1,4 +1,4 @@
-# nagios-telemetry-plugin
+# Nagios Telemetry Plugin
 
 ## Install
 
