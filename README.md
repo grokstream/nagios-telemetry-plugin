@@ -17,10 +17,12 @@ Some example commands:
 4. `service xinetd restart`
 5. Define the new command in /etc/nagios/objects/commands.cfg
 
-`define command{
+```
+define command{
         command_name    telemetry
         command_line    $USER1$/check_nrpe -H $HOSTADDRESS$ -c telemetry
-        }`
+        }
+```
 
 These instructions are done on the Nagios monitoring server:
 
