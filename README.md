@@ -26,20 +26,22 @@ These instructions are done on the Nagios monitoring server:
 
 1. Define a new service in `/usr/local/nagios/etc/services.cfg`
 
-`define service{
+```
+define service{
         use                     generic-service
         host_name               grokA
         service_description     Perf data
         check_command           check_nrpe!check_cpu_times!--cpu_times!user
 
-}`
+}
 
-`define service {
+define service {
         use                     generic-service
         host_name               grokA
         service_description     Virtual Memory total
         check_command           check_nrpe!check_virtual_memory!--virtual_memory!total
-}`
+}
+```
 
 ## Usage
 
