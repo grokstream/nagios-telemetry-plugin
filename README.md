@@ -47,4 +47,4 @@ define service {
 
 ## Usage
 
-`python telemetry --help`
+`python telemetry.py --help`
