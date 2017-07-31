@@ -2,7 +2,7 @@
 
 
 API_KEY = 'AtxhdCsZgRtCzRajYVWqccZJYxY5eZKK'
-GROK_HOST = 'ec2-54-245-130-167.us-west-2.compute.amazonaws.com'
+GROK_HOST = 'taurus-bivc.arategroup.com'
 
 
 try:
@@ -167,8 +167,6 @@ def disk_usage_percent():
         print "Could not determine metric value."
         sys.exit(3)
     return data[3]
-
-
 
 
 #disk I/O
@@ -472,7 +470,7 @@ def post_data(data, metric_name):
     hostname = socket.getfqdn()
     timestamp = int(time.time())
     GROK_ENDPOINT = "https://{}:@{}/_metrics/custom/".format(API_KEY, GROK_HOST)
-    endpoint = "{}{}".format(GROK_ENDPOINT, hostname+'_'+metric_name)
+    endpoint = "{}{}".format(GROK_ENDPOINT, 'nagios_'+hostname+'_'+metric_name)
     r = requests.post(endpoint, json={'timestamp':timestamp, 'value':data}, verify=False)
 
 def main():
