@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-API_KEY = 'AtxhdCsZgRtCzRajYVWqccZJYxY5eZKK'
+API_KEY = ''
 GROK_HOST = 'taurus-bivc.arategroup.com'
 
 
