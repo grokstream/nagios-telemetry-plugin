@@ -2,7 +2,7 @@
 
 
 API_KEY = ''
-GROK_HOST = 'taurus-bivc.arategroup.com'
+GROK_HOST = ''
 
 
 try:
